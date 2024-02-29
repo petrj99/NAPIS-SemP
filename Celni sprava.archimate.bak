@@ -597,9 +597,6 @@ Irregularities are violations of Legislation and Regulations of the Customs Admi
           <child xsi:type="archimate:DiagramObject" id="03bd7dde-6acc-4411-8bf5-8ed3665e4a02" archimateElement="986b04e1-8636-4190-965e-b62b1cb55bfa" type="1">
             <bounds x="11" y="324" width="121" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-cd5f4f33573443f39f51255e407316c3" archimateElement="id-ef72dfd2fc244bedb274530e0dc2590b">
-            <bounds x="18" y="396" width="108" height="55"/>
-          </child>
         </child>
         <child xsi:type="archimate:Group" id="a05e2573-8f42-4489-81fc-bc107bf9611f" name="Secondary processes" textAlignment="1">
           <bounds x="252" y="72" width="145" height="469"/>
@@ -617,6 +614,9 @@ Irregularities are violations of Legislation and Regulations of the Customs Admi
           </child>
           <child xsi:type="archimate:DiagramObject" id="1972adf9-6e20-4e9e-8f9e-20e6e3600e8d" archimateElement="0f28affc-376e-4adf-9768-40f0831cc267" type="1">
             <bounds x="12" y="324" width="120" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-cd5f4f33573443f39f51255e407316c3" archimateElement="id-ef72dfd2fc244bedb274530e0dc2590b">
+            <bounds x="24" y="396" width="108" height="55"/>
           </child>
         </child>
         <child xsi:type="archimate:Group" id="3eed753a-4cdd-4633-89d5-fca66c18933a" name="Exsise Tax" textAlignment="1">
