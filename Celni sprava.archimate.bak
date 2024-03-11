@@ -130,6 +130,16 @@ Irregularities are violations of Legislation and Regulations of the Customs Admi
     <element xsi:type="archimate:ApplicationComponent" name="MA Application" id="292c9008-84e5-4d95-9c5f-ab3e044803b6"/>
     <element xsi:type="archimate:ApplicationComponent" name="ECS" id="986b04e1-8636-4190-965e-b62b1cb55bfa"/>
     <element xsi:type="archimate:ApplicationComponent" name="PLA" id="id-ef72dfd2fc244bedb274530e0dc2590b"/>
+    <element xsi:type="archimate:ApplicationComponent" name="IHA" id="id-5a755bc3fa5d4c95b4e8fc273a9f277b">
+      <documentation>Irregularities Handling Application</documentation>
+      <property key="Capacity" value="50 items per day"/>
+      <property key="Security" value="Medium"/>
+      <property key="Availability" value="24x7, 99.9%"/>
+      <property key="Bussiness Value" value="60"/>
+      <property key="Technical Value" value="50"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="RDS" id="id-f2c1e4e5d5d74a1cbe1bc0991a59504e"/>
+    <element xsi:type="archimate:ApplicationInterface" name="IrregularitiesService" id="id-6da0307b236143b98ab2a792805488ef"/>
   </folder>
   <folder name="Technology &amp; Physical" id="55e9e9d8-aa14-452b-8cb3-fb896b3c7eff" type="technology">
     <element xsi:type="archimate:Node" name="Java Hosting z/OS" id="48d3a879-a71a-4c6e-89e5-e7984ca9ff72"/>
@@ -274,6 +284,16 @@ Irregularities are violations of Legislation and Regulations of the Customs Admi
     <element xsi:type="archimate:ServingRelationship" id="id-30dc0c74a19f421f9f019ad8455ffc92" source="id-d90a13e8e5ad4e26a699c9f3f096d5a9" target="id-db4e91b291fd49339fb560c6c1f8ac4d"/>
     <element xsi:type="archimate:AggregationRelationship" id="id-342f2edd8a5742468bcc7b02a00f9b5c" source="id-db4e91b291fd49339fb560c6c1f8ac4d" target="id-fb85821d46ba4f56b0e29f4d0e28b9e9"/>
     <element xsi:type="archimate:AggregationRelationship" id="id-ddf1f12227354e6ca50e5a0f4b1f71fd" source="id-3b549e16d984418299a94a87f2337ed8" target="id-db4e91b291fd49339fb560c6c1f8ac4d"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-dfbf93fafb024ec486fbc1d89115e641" source="id-5a755bc3fa5d4c95b4e8fc273a9f277b" target="c276993f-db3a-4401-b8aa-990ace2b0119"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-deb874e46d6d4f96b8735007320a27cd" source="id-5a755bc3fa5d4c95b4e8fc273a9f277b" target="0f28affc-376e-4adf-9768-40f0831cc267"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-dcb9b1da9b8b4724b3d7ff978509a141" source="0f28affc-376e-4adf-9768-40f0831cc267" target="id-5a755bc3fa5d4c95b4e8fc273a9f277b"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-97f1aad2f3c34c57924447a31fb86208" source="id-f2c1e4e5d5d74a1cbe1bc0991a59504e" target="id-5a755bc3fa5d4c95b4e8fc273a9f277b"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-6015eee5b1ee4c1aa9b7dd4656139fa2" source="id-6da0307b236143b98ab2a792805488ef" target="676b55b8-256d-45f1-af75-a3823cefbdb3"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-f19e10d3475043aa82d6bc78ede696bb" source="id-6da0307b236143b98ab2a792805488ef" target="0e7502d4-ba58-4fc0-81f8-10995d8b74e2"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-12284e8e90db4b72a1089c4f502af786" source="id-6da0307b236143b98ab2a792805488ef" target="3d55d071-d8a0-495e-9ee6-d9f2a99d5fd7"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-d2783ac13f864477af8c8ddadde9943b" source="id-6da0307b236143b98ab2a792805488ef" target="a4336862-12b0-4488-bb2c-baf486b0d945"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-0ed8f0f3fca54928806c6f10fd662346" source="id-6da0307b236143b98ab2a792805488ef" target="9b088b29-8400-4531-9314-c60707aec673"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-4d00d42a2b5a4d2da8a078a56e56d0d4" source="id-6da0307b236143b98ab2a792805488ef" target="id-5a755bc3fa5d4c95b4e8fc273a9f277b"/>
   </folder>
   <folder name="Views" id="0db00be0-1dda-44cf-a3fa-09c015db96ca" type="diagrams">
     <folder name="Business" id="9a7f862a-3831-4724-97f5-b9c22c519580">
@@ -581,7 +601,7 @@ Irregularities are violations of Legislation and Regulations of the Customs Admi
       </element>
       <element xsi:type="archimate:ArchimateDiagramModel" name="Application Landscape" id="437b5fe4-efc4-4daf-978f-23e82f764920">
         <child xsi:type="archimate:Group" id="0e2968e1-7970-43ec-92ec-858c9d93f91e" name="Primary Processes" textAlignment="1">
-          <bounds x="96" y="72" width="144" height="469"/>
+          <bounds x="96" y="72" width="144" height="541"/>
           <child xsi:type="archimate:DiagramObject" id="2e4d4d30-a59b-45ef-b96b-da6c9fe52c76" archimateElement="3d55d071-d8a0-495e-9ee6-d9f2a99d5fd7" type="1">
             <bounds x="12" y="36" width="120" height="55"/>
           </child>
@@ -597,9 +617,12 @@ Irregularities are violations of Legislation and Regulations of the Customs Admi
           <child xsi:type="archimate:DiagramObject" id="03bd7dde-6acc-4411-8bf5-8ed3665e4a02" archimateElement="986b04e1-8636-4190-965e-b62b1cb55bfa" type="1">
             <bounds x="11" y="324" width="121" height="55"/>
           </child>
+          <child xsi:type="archimate:DiagramObject" id="id-cd5f4f33573443f39f51255e407316c3" archimateElement="id-ef72dfd2fc244bedb274530e0dc2590b">
+            <bounds x="18" y="396" width="108" height="55"/>
+          </child>
         </child>
         <child xsi:type="archimate:Group" id="a05e2573-8f42-4489-81fc-bc107bf9611f" name="Secondary processes" textAlignment="1">
-          <bounds x="252" y="72" width="145" height="469"/>
+          <bounds x="252" y="72" width="145" height="541"/>
           <child xsi:type="archimate:DiagramObject" id="71a20f7d-a7a3-4610-8188-3b7232db07c6" archimateElement="9b088b29-8400-4531-9314-c60707aec673" type="1">
             <bounds x="12" y="36" width="120" height="55"/>
           </child>
@@ -615,18 +638,21 @@ Irregularities are violations of Legislation and Regulations of the Customs Admi
           <child xsi:type="archimate:DiagramObject" id="1972adf9-6e20-4e9e-8f9e-20e6e3600e8d" archimateElement="0f28affc-376e-4adf-9768-40f0831cc267" type="1">
             <bounds x="12" y="324" width="120" height="55"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-cd5f4f33573443f39f51255e407316c3" archimateElement="id-ef72dfd2fc244bedb274530e0dc2590b">
+          <child xsi:type="archimate:DiagramObject" id="id-fe3b2dd2b2f04a61bc11c9fc4b447a2d" archimateElement="id-5a755bc3fa5d4c95b4e8fc273a9f277b">
+            <bounds x="24" y="468" width="108" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-8f1018986c0d498e994c66ab4e6f4181" archimateElement="id-f2c1e4e5d5d74a1cbe1bc0991a59504e">
             <bounds x="24" y="396" width="108" height="55"/>
           </child>
         </child>
         <child xsi:type="archimate:Group" id="3eed753a-4cdd-4633-89d5-fca66c18933a" name="Exsise Tax" textAlignment="1">
-          <bounds x="408" y="72" width="145" height="469"/>
+          <bounds x="408" y="72" width="145" height="541"/>
           <child xsi:type="archimate:DiagramObject" id="3c22bb73-d37f-4b46-94b4-db6c4038b56b" archimateElement="0e7502d4-ba58-4fc0-81f8-10995d8b74e2" type="1">
             <bounds x="12" y="36" width="120" height="55"/>
           </child>
         </child>
         <child xsi:type="archimate:Group" id="316aef28-a4af-481c-ab82-f619ad67d8ac" name="Financial" textAlignment="1">
-          <bounds x="564" y="72" width="157" height="469"/>
+          <bounds x="564" y="72" width="157" height="541"/>
           <child xsi:type="archimate:DiagramObject" id="966ad7ce-bd35-4b7a-b41a-2c35b7357382" archimateElement="676b55b8-256d-45f1-af75-a3823cefbdb3" type="1">
             <bounds x="12" y="36" width="120" height="55"/>
           </child>
@@ -638,7 +664,7 @@ Irregularities are violations of Legislation and Regulations of the Customs Admi
           </child>
         </child>
         <child xsi:type="archimate:Group" id="74268b3e-b6da-4bb1-847e-81c5d76a8720" name="Support" textAlignment="1">
-          <bounds x="732" y="72" width="145" height="469"/>
+          <bounds x="732" y="72" width="145" height="541"/>
           <child xsi:type="archimate:DiagramObject" id="de642fcd-cd93-48bc-9634-d14af928e216" archimateElement="b3eca7fc-9913-4864-8029-cdaba59e94f1" type="1">
             <bounds x="12" y="36" width="120" height="55"/>
           </child>
@@ -685,6 +711,57 @@ Irregularities are violations of Legislation and Regulations of the Customs Admi
           <bounds x="636" y="360" width="120" height="55"/>
         </child>
       </element>
+      <element xsi:type="archimate:ArchimateDiagramModel" name="IHA Context" id="id-738996edde9b4121bc8cf0795a50e692">
+        <child xsi:type="archimate:DiagramObject" id="id-a268ad04bce64ea384ad6d2a3d32bf43" archimateElement="0f28affc-376e-4adf-9768-40f0831cc267">
+          <bounds x="504" y="372" width="120" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-a5842ddb20e64146bd098fcf54d7324b" source="id-a268ad04bce64ea384ad6d2a3d32bf43" target="id-21bcd1c8ade84320a982930a140b2c79" archimateRelationship="id-dcb9b1da9b8b4724b3d7ff978509a141"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-21bcd1c8ade84320a982930a140b2c79" targetConnections="id-a5842ddb20e64146bd098fcf54d7324b id-717bc46446624c3ab11ce57d7580729a id-75e02f52f84246ad8774fb2f87d03546" archimateElement="id-5a755bc3fa5d4c95b4e8fc273a9f277b">
+          <bounds x="600" y="252" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-b358c43fc42b4da8ad9352e132fc25ec" targetConnections="id-65a97a8f0dd8472b9545e71416bbf17e" archimateElement="676b55b8-256d-45f1-af75-a3823cefbdb3">
+          <bounds x="72" y="60" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-00b2b4ee43f546e3b39ff50bbd50cb24" targetConnections="id-106626424acf4548b0dcfc4a857432c1" archimateElement="0e7502d4-ba58-4fc0-81f8-10995d8b74e2">
+          <bounds x="72" y="156" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-8a7dcd9f303646a7928e8dcc15419813" targetConnections="id-14427a62eb634f8fae02db1d822b9fb3" archimateElement="3d55d071-d8a0-495e-9ee6-d9f2a99d5fd7">
+          <bounds x="72" y="252" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-9fc84101916c4cb59472de30badea5ed" targetConnections="id-123da9ba4b984376830265517f428b28" archimateElement="a4336862-12b0-4488-bb2c-baf486b0d945">
+          <bounds x="72" y="348" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-7350d69c84124df98ade57be5b867986" targetConnections="id-c746bf0e8c974e6cad4413e0fce5b66e" archimateElement="9b088b29-8400-4531-9314-c60707aec673">
+          <bounds x="72" y="444" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-4796f94983f343898b0f1716eb13839c" archimateElement="id-f2c1e4e5d5d74a1cbe1bc0991a59504e">
+          <bounds x="696" y="372" width="120" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-717bc46446624c3ab11ce57d7580729a" source="id-4796f94983f343898b0f1716eb13839c" target="id-21bcd1c8ade84320a982930a140b2c79" archimateRelationship="id-97f1aad2f3c34c57924447a31fb86208"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-0c124f2aecec4b5f85d3606491909df1" archimateElement="id-6da0307b236143b98ab2a792805488ef">
+          <bounds x="324" y="252" width="157" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-65a97a8f0dd8472b9545e71416bbf17e" source="id-0c124f2aecec4b5f85d3606491909df1" target="id-b358c43fc42b4da8ad9352e132fc25ec" archimateRelationship="id-6015eee5b1ee4c1aa9b7dd4656139fa2">
+            <bendpoint startX="-162" startY="-3" endX="108" endY="189"/>
+            <bendpoint startX="-162" startY="-195" endX="108" endY="-3"/>
+          </sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-106626424acf4548b0dcfc4a857432c1" source="id-0c124f2aecec4b5f85d3606491909df1" target="id-00b2b4ee43f546e3b39ff50bbd50cb24" archimateRelationship="id-f19e10d3475043aa82d6bc78ede696bb">
+            <bendpoint startX="-162" startY="-3" endX="108" endY="93"/>
+            <bendpoint startX="-162" startY="-99" endX="108" endY="-3"/>
+          </sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-14427a62eb634f8fae02db1d822b9fb3" source="id-0c124f2aecec4b5f85d3606491909df1" target="id-8a7dcd9f303646a7928e8dcc15419813" archimateRelationship="id-12284e8e90db4b72a1089c4f502af786">
+            <bendpoint startX="-162" startY="-3" endX="108" endY="-3"/>
+          </sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-123da9ba4b984376830265517f428b28" source="id-0c124f2aecec4b5f85d3606491909df1" target="id-9fc84101916c4cb59472de30badea5ed" archimateRelationship="id-d2783ac13f864477af8c8ddadde9943b">
+            <bendpoint startX="-162" startY="-3" endX="108" endY="-99"/>
+            <bendpoint startX="-162" startY="93" endX="108" endY="-3"/>
+          </sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-c746bf0e8c974e6cad4413e0fce5b66e" source="id-0c124f2aecec4b5f85d3606491909df1" target="id-7350d69c84124df98ade57be5b867986" archimateRelationship="id-0ed8f0f3fca54928806c6f10fd662346">
+            <bendpoint startX="-162" startY="-3" endX="108" endY="-195"/>
+            <bendpoint startX="-162" startY="189" endX="108" endY="-3"/>
+          </sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-75e02f52f84246ad8774fb2f87d03546" source="id-0c124f2aecec4b5f85d3606491909df1" target="id-21bcd1c8ade84320a982930a140b2c79" archimateRelationship="id-4d00d42a2b5a4d2da8a078a56e56d0d4"/>
+        </child>
+      </element>
     </folder>
     <folder name="Layered" id="073b2c95-73c2-4019-9691-d12e3a1c0c43">
       <element xsi:type="archimate:ArchimateDiagramModel" name="Process -application" id="5aa74887-7c8a-4d15-87a6-33ccdcc974fe" viewpoint="layered">
@@ -700,8 +777,8 @@ Irregularities are violations of Legislation and Regulations of the Customs Admi
         <child xsi:type="archimate:DiagramObject" id="4377b8bd-ce14-4040-ae03-622c62bd9b91" targetConnections="0ef2c240-f9ab-454c-baf2-30f660cc7e70" archimateElement="f58d713b-27b3-4108-9c6a-24faf0b327a0">
           <bounds x="336" y="24" width="133" height="61"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="b30dda32-bba0-4ac4-982d-dff9496e0cb2" targetConnections="5beba851-0999-48aa-913b-f15ac6610d9b" archimateElement="c276993f-db3a-4401-b8aa-990ace2b0119">
-          <bounds x="480" y="24" width="133" height="61"/>
+        <child xsi:type="archimate:DiagramObject" id="b30dda32-bba0-4ac4-982d-dff9496e0cb2" targetConnections="5beba851-0999-48aa-913b-f15ac6610d9b id-3c333e80f95240daa58a1e6aa2a7f4f6" archimateElement="c276993f-db3a-4401-b8aa-990ace2b0119">
+          <bounds x="552" y="24" width="133" height="61"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="df01e537-fbd9-411a-8abe-2c46b8b0ea88" targetConnections="d4760331-e58d-43ef-98db-aaa75b5bcdf7" archimateElement="8dc982d3-e692-4490-a28d-91e6d003205e">
           <bounds x="372" y="276" width="133" height="61"/>
@@ -750,11 +827,15 @@ Irregularities are violations of Legislation and Regulations of the Customs Admi
           <sourceConnection xsi:type="archimate:Connection" id="5beba851-0999-48aa-913b-f15ac6610d9b" source="253e1726-a381-4527-85af-95ff4fcf2d13" target="b30dda32-bba0-4ac4-982d-dff9496e0cb2" archimateRelationship="c9e23cf3-39a0-4939-a0e4-6e8873796cbd"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-68c304619dcf48d482f7b6d1fd384279" targetConnections="id-ff72cc019aa34d9a906e8fc1d133e1f8" archimateElement="id-6756ee32c86e4288b5c5f3c1c804bcfd">
-          <bounds x="636" y="26" width="120" height="58"/>
+          <bounds x="816" y="26" width="120" height="58"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-ca4952ba56b94bdca3eb43dee03bdf2e" archimateElement="id-ef72dfd2fc244bedb274530e0dc2590b">
-          <bounds x="636" y="120" width="120" height="61"/>
+          <bounds x="816" y="120" width="120" height="61"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-ff72cc019aa34d9a906e8fc1d133e1f8" source="id-ca4952ba56b94bdca3eb43dee03bdf2e" target="id-68c304619dcf48d482f7b6d1fd384279" archimateRelationship="id-d8bec3a0865243c0bb9706d68c971cf9"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-a0f33af3b0384d738e09a4a1bfdfe8c7" archimateElement="id-5a755bc3fa5d4c95b4e8fc273a9f277b">
+          <bounds x="636" y="123" width="120" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-3c333e80f95240daa58a1e6aa2a7f4f6" source="id-a0f33af3b0384d738e09a4a1bfdfe8c7" target="b30dda32-bba0-4ac4-982d-dff9496e0cb2" archimateRelationship="id-dfbf93fafb024ec486fbc1d89115e641"/>
         </child>
       </element>
       <element xsi:type="archimate:ArchimateDiagramModel" name="Application- Technology" id="13e6af04-c4af-4882-9737-d89508a066db">
